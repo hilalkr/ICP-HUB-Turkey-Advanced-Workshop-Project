@@ -1,0 +1,23 @@
+{
+  "canisters": {
+    "shopping_backend": {
+      "main": "src/motoko_project_backend/main.mo",
+      "type": "motoko"
+    },
+    "shopping_frontend": {
+      "dependencies": ["shopping_backend"],
+      "frontend": {
+        "entrypoint": "src/motoko_project_frontend/index.html"
+      },
+      "source": ["src/motoko_project_frontend"],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "version": 1
+}

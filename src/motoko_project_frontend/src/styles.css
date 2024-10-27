@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+.app {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  form, ul {
+    margin: 20px;
+    padding: 0;
+    list-style: none;
+  }
+  
+  button {
+    margin-left: 10px;
+  }
+  

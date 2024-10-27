@@ -1,0 +1,21 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './styles.css';
+import App from './App';
+import { HttpAgent } from '@dfinity/agent';
+import { canisterId, createActor } from '../declarations/shopping_backend'; // Canister dosyasının doğru yolunu kullanın
+
+const agent = new HttpAgent({ host: 'http://127.0.0.1:8000' });
+if (import.meta.env.VITE_DFX_NETWORK === 'local') {
+  agent.fetchRootKey(); // Yalnızca yerel geliştirme ortamında kullanılır
+}
+
+const backend = createActor(canisterId, { agent });
+
+// backend’i tüm uygulamada kullanmak için bir context veya prop üzerinden App'e aktarabilirsiniz
+ReactDOM.render(
+  <React.StrictMode>
+    <App backend={backend} />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
